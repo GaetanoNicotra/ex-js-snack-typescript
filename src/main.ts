@@ -11,7 +11,16 @@ if (typeof dati === 'string') {
   {
     console.log('false')
   }
-
-} else {
+} else if (typeof dati === null) {
+  console.log('il dato è vuoto')
+} else if (Array.isArray(dati)) {
+  console.log(dati.length)
+} else if (dati instanceof Promise) {
+  dati.then((msg) => {
+    console.log(msg)
+  })
+}
+else {
   console.log('tipo non supportato')
 }
+
